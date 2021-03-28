@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".search"
+    tools:showIn="@layout/activity_sales">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="137dp"
+                android:layout_height="115dp"
+                android:background="@drawable/house11" />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="LUXURIOUS 4 BEDROOMS FLAT AT THANE"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="137dp"
+                android:layout_height="115dp"
+                android:background="@drawable/home2" />
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="2 BEDROOM APARTMENT NEAR BEACH"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="137dp"
+                android:layout_height="115dp"
+                android:background="@drawable/third" />
+
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="ONE BEDROOM APARTMENT WITH AC"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="137dp"
+                android:layout_height="115dp"
+                android:background="@drawable/fourth" />
+
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="2 BEDROOM APARTMENT AP NALASOPARA"
+
+
+
+
+
+                android:textColor="@color/black"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

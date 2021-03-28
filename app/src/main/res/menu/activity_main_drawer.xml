@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home" />
+        <item
+            android:id="@+id/sales"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:title="Sales" />
+        <item
+            android:id="@+id/rentals"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:title="Rentals" />
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="Search" />
+        <item
+            android:id="@+id/ourLocation"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Our Locations" />
+        <item
+            android:id="@+id/favorites"
+            android:icon="@drawable/ic_baseline_star_24"
+            android:title="Favorites" />
+        <item
+            android:id="@+id/aboutUs"
+            android:icon="@drawable/ic_baseline_people_24"
+            android:title="About Us" />
+        <item
+            android:id="@+id/contactUs"
+            android:icon="@drawable/ic_baseline_contacts_24"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_baseline_power_settings_new_24"
+            android:title="Log out" />
+    </group>
+</menu>
