@@ -1,9 +1,11 @@
 package com.example.realestateproj;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.realestateproj.ui.home.HomeFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -14,7 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+    DrawerLayout drawerLayout;
     private GoogleMap mMap;
 
     @Override
@@ -22,7 +24,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-
+        drawerLayout= findViewById(R.id.drawer_layout);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -49,4 +51,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Mumbai));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Mumbai, 12.0f));
     }
+
 }
