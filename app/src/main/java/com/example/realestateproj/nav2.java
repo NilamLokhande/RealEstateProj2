@@ -1,9 +1,5 @@
 package com.example.realestateproj;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class nav2 extends AppCompatActivity {
 
@@ -46,7 +46,7 @@ public class nav2 extends AppCompatActivity {
         qRental.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(nav2.this, rentals.class));
+                startActivity(new Intent(nav2.this, rentals2.class));
             }
         });
         qFavor= findViewById(R.id.favourites2);
@@ -68,7 +68,7 @@ public class nav2 extends AppCompatActivity {
     }
     public void ClickMenu(View view){
         openDrawer(drawerLayout);
-        
+
     }
 
     public static void openDrawer(DrawerLayout drawerLayout) {
@@ -93,7 +93,7 @@ public class nav2 extends AppCompatActivity {
         redirectActivity(this,sales2.class );
     }
     public void ClickRentals(View view){
-        redirectActivity(this, rentals.class);
+        redirectActivity(this, rentals2.class);
     }
     public void ClickSearch(View view){
         redirectActivity(this, search.class);
@@ -146,8 +146,8 @@ public class nav2 extends AppCompatActivity {
     }
     @Override
     protected void onPause(){
-         super.onPause();
-         closeDrawer(drawerLayout);
+        super.onPause();
+        closeDrawer(drawerLayout);
     }
 
 

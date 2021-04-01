@@ -1,12 +1,12 @@
 package com.example.realestateproj;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class home extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class home extends AppCompatActivity {
         pRental.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(home.this, rentals.class));
+                startActivity(new Intent(home.this, rentals2.class));
             }
         });
         pFavor= findViewById(R.id.favourites2);
@@ -76,7 +76,7 @@ public class home extends AppCompatActivity {
         nav2.redirectActivity(this, sales2.class);
     }
     public void ClickRentals(View view){
-        nav2.redirectActivity(this, rentals.class);
+        nav2.redirectActivity(this, rentals2.class);
     }
     public void ClickSearch(View view){
         nav2.redirectActivity(this, search.class);

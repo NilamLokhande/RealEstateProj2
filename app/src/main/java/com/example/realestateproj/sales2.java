@@ -1,10 +1,5 @@
 package com.example.realestateproj;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,12 +12,18 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 public class sales2 extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ListView list;
-    String PropNames[]={"LUXURIOUS 4 BEDROOMS FLAT AT THANE", "2 BEDROOM APARTMENT NEAR BEACH", "ONE BEDROOM APARTMENT WITH AC","2 BEDROOM APARTMENT AP NALASOPARA"};
-    String Descriptions[]={"Sangeetkar N Dutta Marg, Gharkul Society","CTS No. 185 & 201, Azad Nagar Road No. 3, Off. Veera Desai Road, Andheri West, Mumbai, Maharashtra, INDIA.","ceaser road , opp to Filmalaya Studio","JP Road near Bombay Bazar"};
-    int imgs[]={R.drawable.house11, R.drawable.home2,R.drawable.third, R.drawable.fourth};
+    String PropNames[]={"LUXURIOUS 4 BEDROOMS FLAT AT THANE", "2 BEDROOM APARTMENT NEAR BEACH", "ONE BEDROOM APARTMENT WITH AC","2 BEDROOM APARTMENT AP NALASOPARA","2 BHK Flat For Sale In Parkwoods In Thane West","2 BHK Flat For Sale In Sanskruti In Dadar West","Apartment for Sale In Hari Om Complex In Nalasopara West","3 BHK Flat For Sale In Vasant Athena In Thane West","2 BHK Flat For Sale In Greenfields Chs In Andheri West","1 BHK Flat For Sale In Lokhandwala Woodland","1 BHK Flat For Sale In Amit Chs In Ville Parle East","3 BHK Flat For Sale In Silicon Park In Malad West","2 BHK Flat For Sale In Bhaskar Nivas In Andheri West","2 BHK Flat For Sale In Bachraj Paradise In Virar West","3 BHK For Sale In Zanira Tattva Life Rowhouse In Karjat"};
+    String Descriptions[]={"Sangeetkar N Dutta Marg, Gharkul Society","CTS No. 185 & 201, Azad Nagar Road No. 3, Off. Veera Desai Road, Andheri West, Mumbai, Maharashtra, INDIA.","ceaser road , opp to Filmalaya Studio","JP Road near Bombay Bazar","Ghodbunder Road,Near DMART,Thane West","SHIVAJI PARK Near Shiv Sena Bhavan","Station Rd near Narayana eTechno School , Nalasopara","Near Viviana Mall,On Eastern Express Highway, Service Rd, Near Viviana Mall","Greenfields CHS, Lokhandwala Complex, Andheri West, Mumbai, Maharashtra 400053","Ashok academic school","next to Jal Usha , Netaji Subhash Nagar","Silicon Park, Jankalyan Nagar, Malad West, Mumbai, Maharashtra","Gulmohar Garden, Yari Road, Yagna Nagar, Versova, Andheri West, Mumbai, Maharashtra","Avenue A -3 , Global City","near Sidhtek Ganpati"};
+    int imgs[]={R.drawable.house11, R.drawable.home2,R.drawable.third, R.drawable.fourth, R.drawable.fifth, R.drawable.sixth, R.drawable.seventh, R.drawable.eight, R.drawable.ninth, R.drawable.tenth,R.drawable.eleventh,R.drawable.twelfth,R.drawable.thirteen, R.drawable.fourteen, R.drawable.fifteen};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,11 @@ public class sales2 extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               Intent intent = new Intent(getApplicationContext(), PropertyDetails.class);
-               intent.putExtra("Propnames2 ",PropNames[i]);
-               intent.putExtra("Desc2",Descriptions[i]);
-               intent.putExtra("image2",imgs[i]);
-               startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), PropertyDetails.class);
+                intent.putExtra("Propnames2 ",PropNames[i]);
+                intent.putExtra("Desc2",Descriptions[i]);
+                intent.putExtra("image2",imgs[i]);
+                startActivity(intent);
 
             }
         });
