@@ -35,7 +35,7 @@ public class home extends AppCompatActivity {
         pSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(home.this, sales2.class));
+                startActivity(new Intent(home.this, Sales3.class));
             }
         });
         pRental= findViewById(R.id.rentals2);
@@ -79,7 +79,7 @@ public class home extends AppCompatActivity {
         nav2.redirectActivity(this, rentals2.class);
     }
     public void ClickSearch(View view){
-        nav2.redirectActivity(this, search.class);
+        nav2.redirectActivity(this, Sales3.class);
     }
     public void ClickOurLocations(View view){
         nav2.redirectActivity(this, MapsActivity.class);

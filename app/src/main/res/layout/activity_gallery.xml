@@ -1,203 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".Gallery">
+    android:background="#000000"
+    android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+    <androidx.viewpager.widget.ViewPager
+
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/Theme.RealEstateProj.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="72dp"
+        android:fitsSystemWindows="true">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#54B5BF"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+    </androidx.viewpager.widget.ViewPager>
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.RealEstateProj.PopupOverlay" />
+    <ImageButton
+        android:id="@+id/btn_close"
+        style="@style/Widget.AppCompat.ActionButton"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_keyboard_backspace" />
 
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="709dp"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            card_view:cardCornerRadius="4dp"
-            android:layout_margin="4dp"
-            android:id= "@+id/card3">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.0"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/living11"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="LIVING ROOM"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="5dp"/>
-            </LinearLayout>
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-      <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        card_view:cardCornerRadius="4dp"
-        android:layout_margin="4dp"
-        android:id= "@+id/card1">
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:background="#000000">
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-            <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.0"
-            android:scaleType="centerCrop"
-            android:background="@drawable/bedroom11"
-            />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BEDROOM"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"/>
-        </LinearLayout>
-
-
-
-
-      </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                card_view:cardCornerRadius="4dp"
-                android:layout_margin="4dp"
-                android:id= "@+id/card4">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.0"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/study11"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="STUDY ROOM"
-                        android:textColor="#000000"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-
-
-
-
-            </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            card_view:cardCornerRadius="4dp"
-            android:layout_margin="4dp"
-            android:id= "@+id/card5">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.0"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/kitchen11"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="KITCHEN"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="5dp"/>
-            </LinearLayout>
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:id="@+id/thumbnails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="2dp" />
+    </HorizontalScrollView>
+</FrameLayout>

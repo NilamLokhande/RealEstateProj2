@@ -34,7 +34,7 @@ public class rentals2 extends AppCompatActivity {
         list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), PropertyDetails.class);
+                Intent intent = new Intent(getApplicationContext(), rentalDetails.class);
                 intent.putExtra("Propnames2 ", PropNames[i]);
                 intent.putExtra("Desc2", Descriptions[i]);
                 intent.putExtra("image2", imgs[i]);

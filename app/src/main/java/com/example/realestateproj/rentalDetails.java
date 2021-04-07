@@ -1,20 +1,14 @@
 package com.example.realestateproj;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PropertyDetails extends AppCompatActivity {
-
-    ImageView img;
+public class rentalDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_property_details);
-
-
-
+        setContentView(R.layout.activity_rental_details);
     }
 }

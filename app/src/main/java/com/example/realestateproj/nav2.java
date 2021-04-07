@@ -39,7 +39,7 @@ public class nav2 extends AppCompatActivity {
         qSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(nav2.this, sales2.class));
+                startActivity(new Intent(nav2.this, Sales3.class));
             }
         });
         qRental= findViewById(R.id.rentals2);
@@ -90,7 +90,7 @@ public class nav2 extends AppCompatActivity {
         recreate();
     }
     public void ClickSales(View view){
-        redirectActivity(this,sales2.class );
+        redirectActivity(this,Sales3.class );
     }
     public void ClickRentals(View view){
         redirectActivity(this, rentals2.class);
