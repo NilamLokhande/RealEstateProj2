@@ -20,6 +20,7 @@ public class nav2 extends AppCompatActivity {
     Button qSale;
     Button qRental;
     Button qFavor;
+    Button qAddProperty;
 
     Button qSearch;
 
@@ -46,7 +47,7 @@ public class nav2 extends AppCompatActivity {
         qRental.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(nav2.this, rentals2.class));
+                startActivity(new Intent(nav2.this, rentals3.class));
             }
         });
         qFavor= findViewById(R.id.favourites2);
@@ -63,7 +64,13 @@ public class nav2 extends AppCompatActivity {
                 startActivity(new Intent(nav2.this, search.class));
             }
         });
-
+        qAddProperty=findViewById(R.id.addProperty);
+        qAddProperty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nav2.this, addProperty.class));
+            }
+        });
 
     }
     public void ClickMenu(View view){
@@ -93,7 +100,7 @@ public class nav2 extends AppCompatActivity {
         redirectActivity(this,Sales3.class );
     }
     public void ClickRentals(View view){
-        redirectActivity(this, rentals2.class);
+        redirectActivity(this, rentals3.class);
     }
     public void ClickSearch(View view){
         redirectActivity(this, search.class);

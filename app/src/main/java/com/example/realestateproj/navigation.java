@@ -2,26 +2,24 @@ package com.example.realestateproj;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -106,10 +104,10 @@ public class navigation extends AppCompatActivity implements NavigationView.OnNa
             Intent intent = new Intent(this, contactUs.class);
             startActivity(intent);
         }else if (id == R.id.sales) {
-            Intent intent = new Intent(this, sales.class);
+            Intent intent = new Intent(this, Sales3.class);
             startActivity(intent);
         }else if (id == R.id.rentals) {
-            Intent intent = new Intent(this, rentals.class);
+            Intent intent = new Intent(this, rentals3.class);
             startActivity(intent);
         }else if (id == R.id.favorites) {
             Intent intent = new Intent(this, favorites.class);

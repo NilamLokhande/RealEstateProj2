@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     tools:context=".home">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -77,7 +78,6 @@
             app:layout_constraintTop_toBottomOf="@+id/sales2" />
 
 
-
         <Button
             android:id="@+id/search2"
             android:layout_width="wrap_content"
@@ -93,7 +93,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/favourites2"
             app:layout_constraintTop_toBottomOf="@+id/ourLocations2" />
-
 
 
         <ImageView
@@ -121,6 +120,24 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/addProperty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="56dp"
+
+            android:backgroundTint="#54B5BF"
+            android:drawableLeft="@drawable/ic_baseline_post_add_24"
+            android:text="Add Property"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favourites2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

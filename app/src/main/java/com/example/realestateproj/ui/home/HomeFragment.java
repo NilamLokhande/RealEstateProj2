@@ -13,11 +13,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.realestateproj.MapsActivity;
 import com.example.realestateproj.R;
+import com.example.realestateproj.Sales3;
 import com.example.realestateproj.contactUs;
-import com.example.realestateproj.databinding.FragmentHomeBinding;
 import com.example.realestateproj.favorites;
-import com.example.realestateproj.rentals;
-import com.example.realestateproj.sales;
+import com.example.realestateproj.rentals3;
 import com.example.realestateproj.search;
 
 public class HomeFragment extends Fragment {
@@ -51,14 +50,14 @@ public class HomeFragment extends Fragment {
         mSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), sales.class));
+                startActivity(new Intent(getActivity(), Sales3.class));
             }
         });
         mRental = root.findViewById(R.id.rentals2);
         mRental.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), rentals.class));
+                startActivity(new Intent(getActivity(), rentals3.class));
             }
         });
         mFavor = root.findViewById(R.id.favourites2);

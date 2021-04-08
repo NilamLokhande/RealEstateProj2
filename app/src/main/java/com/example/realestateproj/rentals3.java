@@ -10,20 +10,18 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Sales3 extends AppCompatActivity {
+public class rentals3 extends AppCompatActivity {
     private RecyclerView recyclerView;
     myadapter adapter;
     DatabaseReference mbase;
-   
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sales3);
-        mbase = FirebaseDatabase.getInstance().getReference("Properties").child("Sales");
+        setContentView(R.layout.activity_rentals3);
+        mbase = FirebaseDatabase.getInstance().getReference("Properties").child("Rentals");
 
-        recyclerView = findViewById(R.id.recycler1);
+        recyclerView = findViewById(R.id.recycler2);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -55,5 +53,5 @@ public class Sales3 extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
-}
 
+}

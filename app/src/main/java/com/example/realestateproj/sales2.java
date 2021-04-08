@@ -99,7 +99,7 @@ public class sales2 extends AppCompatActivity {
         recreate();
     }
     public void ClickRentals(View view){
-        nav2.redirectActivity(this, rentals.class);
+        nav2.redirectActivity(this, rentals3.class);
     }
     public void ClickSearch(View view){
         nav2.redirectActivity(this, search.class);

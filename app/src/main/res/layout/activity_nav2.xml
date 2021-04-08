@@ -101,6 +101,17 @@
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintStart_toEndOf="@+id/favourites2"
              app:layout_constraintTop_toBottomOf="@+id/ourLocations2" />
+         <Button
+             android:id="@+id/addProperty"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="15dp"
+             android:layout_marginEnd="30dp"
+
+             android:backgroundTint="#54B5BF"
+             android:drawableLeft="@drawable/ic_baseline_post_add_24"
+             android:text="Add Property"/>
+
 
 
 

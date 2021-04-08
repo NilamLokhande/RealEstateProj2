@@ -17,6 +17,7 @@ public class home extends AppCompatActivity {
     Button pFavor;
     Button pContactUs;
     Button pSearch;
+    Button pAddProperty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class home extends AppCompatActivity {
         pRental.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(home.this, rentals2.class));
+                startActivity(new Intent(home.this, rentals3.class));
             }
         });
         pFavor= findViewById(R.id.favourites2);
@@ -59,6 +60,13 @@ public class home extends AppCompatActivity {
                 startActivity(new Intent(home.this, search.class));
             }
         });
+        pAddProperty=findViewById(R.id.addProperty);
+        pAddProperty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(home.this, addProperty.class));
+            }
+        });
 
 
     }
@@ -73,13 +81,13 @@ public class home extends AppCompatActivity {
 
     }
     public void ClickSales(View view){
-        nav2.redirectActivity(this, sales2.class);
+        nav2.redirectActivity(this, Sales3.class);
     }
     public void ClickRentals(View view){
-        nav2.redirectActivity(this, rentals2.class);
+        nav2.redirectActivity(this, rentals3.class);
     }
     public void ClickSearch(View view){
-        nav2.redirectActivity(this, Sales3.class);
+        nav2.redirectActivity(this, search.class);
     }
     public void ClickOurLocations(View view){
         nav2.redirectActivity(this, MapsActivity.class);

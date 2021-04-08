@@ -18,8 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealEstateProj">
-        <activity android:name=".Sales3"></activity>
-        <activity android:name=".rentalDetails" />
+        <activity android:name=".rentaldetails"></activity>
+        <activity android:name=".rentals3" />
+        <activity android:name=".addProperty" />
+        <activity android:name=".Sales3" />
         <activity android:name=".rentals2" />
         <activity android:name=".PropertyDetails" />
         <activity android:name=".sales2" />
@@ -51,14 +53,6 @@
         <activity
             android:name=".favorites"
             android:label="@string/title_activity_favorites"
-            android:theme="@style/Theme.RealEstateProj.NoActionBar" />
-        <activity
-            android:name=".rentals"
-            android:label="@string/title_activity_rentals"
-            android:theme="@style/Theme.RealEstateProj.NoActionBar" />
-        <activity
-            android:name=".sales"
-            android:label="@string/title_activity_sales"
             android:theme="@style/Theme.RealEstateProj.NoActionBar" />
         <activity android:name=".aboutUs" />
         <activity android:name=".contactUs" />
