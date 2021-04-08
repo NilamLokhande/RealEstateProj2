@@ -1,10 +1,12 @@
 package com.example.realestateproj;
 
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
+import android.provider.MediaStore;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -14,18 +16,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
 
 public class addProperty extends AppCompatActivity {
 
@@ -40,6 +40,7 @@ public class addProperty extends AppCompatActivity {
     private Uri mImageUri;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+    ProgressDialog progressDialog ;
 
 
 
@@ -56,8 +57,8 @@ public class addProperty extends AppCompatActivity {
         mImageView=findViewById(R.id.image_view);
         mProgressBar=findViewById(R.id.progress_bar);
 
-        mStorageRef= FirebaseStorage.getInstance().getReference("Sales");
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Sales");
+        mStorageRef= FirebaseStorage.getInstance().getReference();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Properties").child("Sales");
 
 
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +82,7 @@ public class addProperty extends AppCompatActivity {
         });
     }
 
+
     private void openFileChooser(){
         Intent intent=new Intent();
         intent.setType("image/*");
@@ -94,7 +96,12 @@ public class addProperty extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
           mImageUri = data.getData();
-          Picasso.get().load(mImageUri).into(mImageView);
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), mImageUri);
+                mImageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -106,40 +113,39 @@ public class addProperty extends AppCompatActivity {
 
     private void uploadFile(){
          if(mImageUri != null){
-             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
-             fileReference.putFile(mImageUri)
+//             progressDialog.setTitle("Image is Uploading...");
+//             progressDialog.show();
+             StorageReference storageReference2 = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
+             storageReference2.putFile(mImageUri)
                      .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                          @Override
                          public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                             Handler handler= new Handler();
-                             handler.postDelayed(new Runnable() {
+                             storageReference2.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                  @Override
-                                 public void run() {
-                                     mProgressBar.setProgress(0);
+                                 public void onSuccess(Uri uri) {
+                                    String url = uri.toString();
+                                     String PropName = mEditTextPropertyName.getText().toString().trim();
+                                     String Description = mEditTextPropertyDesc.getText().toString().trim();
+
+                                     Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                                     @SuppressWarnings("VisibleForTests")
+                                     Upload imageUploadInfo = new Upload(PropName, Description, url);
+                                     String ImageUploadId = mDatabaseRef.push().getKey();
+
+                                     mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);
+                                     startActivity(new Intent(addProperty.this, home.class));
                                  }
-                             },500);
+                             });
 
-                             Toast.makeText(addProperty.this,"Upload successful",Toast.LENGTH_LONG).show();
-
-                             Upload upload=new Upload(mEditTextPropertyName.getText().toString().trim(),
-                                     taskSnapshot.getStorage().getDownloadUrl().toString());
-                             String uploadId= mDatabaseRef.push().getKey();
-                             mDatabaseRef.child(uploadId).setValue(upload);
-
-                         }
-                     })
-                     .addOnFailureListener(new OnFailureListener() {
-                         @Override
-                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(addProperty.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                         }
-                     })
-                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                         @Override
-                         public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
-                           double progress=(100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());{
-                               mProgressBar.setProgress((int)progress);
-                             }
+//                             String PropName = mEditTextPropertyName.getText().toString().trim();
+//                             String Description = mEditTextPropertyDesc.getText().toString().trim();
+//
+//                             Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+//                             @SuppressWarnings("VisibleForTests")
+//                             Upload imageUploadInfo = new Upload(PropName, Description, storageReference2.getDownloadUrl().toString());
+//                             String ImageUploadId = mDatabaseRef.push().getKey();
+//
+//                             mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);
                          }
                      });
 

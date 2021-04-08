@@ -1,40 +1,40 @@
 package com.example.realestateproj;
 
 public class Upload {
-    private String mPropName;
-    private String mPropDesc;
-    private String mImageUrl;
+    String Description,PropName, purl;
     public Upload(String trim, String s){
 
     }
-    public Upload(String name , String ImageUrl, String PropDesc){
+    public Upload(String PropName, String Description,String purl){
 
-        if(name.trim().equals("")){
-            name= "No Name";
+        if(PropName.trim().equals("")){
+            PropName= "No Name";
         }
-        mPropName=name;
-
-        mPropDesc=PropDesc;
-        mImageUrl=ImageUrl;
+        this.Description=Description;
+        this.PropName=PropName;
+        this.purl=purl;
     }
 
-    public String getName(){
-        return mPropName;
+    public String getDescription() {
+        return Description;
     }
-    public void setName(String name){
-        mPropName=name;
+
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
-    public String getDesc(){
-        return mPropDesc;
+    public String getPropName() {
+        return PropName;
     }
-    public void setDesc(String PropDesc){
-        mPropDesc=PropDesc;
+
+    public void setPropName(String PropName) {
+        this.PropName = PropName;
     }
-    public String getUrl(){
-        return mImageUrl;
+    public String getPurl() {
+        return purl;
     }
-    public void setUrl(String ImageUrl){
-        mImageUrl=ImageUrl;
+
+    public void setPurl(String purl) {
+        this.purl = purl;
     }
 
 }
