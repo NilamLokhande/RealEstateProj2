@@ -1,6 +1,5 @@
 package com.example.realestateproj;
 
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -35,12 +34,14 @@ public class addProperty extends AppCompatActivity {
     private TextView mTextViewShowUploads;
     private EditText mEditTextPropertyName;
     private EditText mEditTextPropertyDesc;
+    private EditText mEditTextPropertyAddress;
+    private EditText mEditTextPropertyPrice;
+    private EditText mEditTextCountryCode;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
     private Uri mImageUri;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-    ProgressDialog progressDialog ;
 
 
 
@@ -54,8 +55,12 @@ public class addProperty extends AppCompatActivity {
         mTextViewShowUploads=findViewById(R.id.textView26);
         mEditTextPropertyName=findViewById(R.id.editTextTextPersonName4);
         mEditTextPropertyDesc=findViewById(R.id.editTextTextPersonName5);
+        mEditTextPropertyAddress= findViewById(R.id.propertyAddress);
+        mEditTextPropertyPrice=findViewById(R.id.enterPrize);
+        mEditTextCountryCode=findViewById(R.id.enterCountryCode);
+        mProgressBar =findViewById(R.id.progress_bar);
+
         mImageView=findViewById(R.id.image_view);
-        mProgressBar=findViewById(R.id.progress_bar);
 
         mStorageRef= FirebaseStorage.getInstance().getReference();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Properties").child("Sales");
@@ -113,8 +118,6 @@ public class addProperty extends AppCompatActivity {
 
     private void uploadFile(){
          if(mImageUri != null){
-//             progressDialog.setTitle("Image is Uploading...");
-//             progressDialog.show();
              StorageReference storageReference2 = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
              storageReference2.putFile(mImageUri)
                      .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -124,28 +127,24 @@ public class addProperty extends AppCompatActivity {
                                  @Override
                                  public void onSuccess(Uri uri) {
                                     String url = uri.toString();
+//                                    String key = mDatabaseRef.child("Sales").push().getKey();
                                      String PropName = mEditTextPropertyName.getText().toString().trim();
                                      String Description = mEditTextPropertyDesc.getText().toString().trim();
+                                     String Address = mEditTextPropertyAddress.getText().toString().trim();
+                                     String Price = mEditTextPropertyPrice.getText().toString().trim();
+                                     String countryCode = mEditTextCountryCode.getText().toString().trim();
 
                                      Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
                                      @SuppressWarnings("VisibleForTests")
-                                     Upload imageUploadInfo = new Upload(PropName, Description, url);
                                      String ImageUploadId = mDatabaseRef.push().getKey();
+                                     Upload imageUploadInfo = new Upload(PropName, url, Description, Address, Price, countryCode);
+//                                     String ImageUploadId = mDatabaseRef.push().getKey();
 
                                      mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);
                                      startActivity(new Intent(addProperty.this, home.class));
                                  }
                              });
 
-//                             String PropName = mEditTextPropertyName.getText().toString().trim();
-//                             String Description = mEditTextPropertyDesc.getText().toString().trim();
-//
-//                             Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
-//                             @SuppressWarnings("VisibleForTests")
-//                             Upload imageUploadInfo = new Upload(PropName, Description, storageReference2.getDownloadUrl().toString());
-//                             String ImageUploadId = mDatabaseRef.push().getKey();
-//
-//                             mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);
                          }
                      });
 

@@ -1,5 +1,7 @@
 package com.example.realestateproj;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder> {
+    private Context context;
 
     public myadapter(@NonNull FirebaseRecyclerOptions<model> options) {
         super(options);
@@ -21,9 +24,30 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
-        holder.nametext.setText(model.getPropName());
-        holder.descriptiontext.setText(model.getDescription());
-        Glide.with(holder.img1.getContext()).load(model.getPurl()).into(holder.img1);
+
+        final String name = model.getName();
+        final String description = model.getPropDesc();
+        String url = model.getUrl();
+        holder.nametext.setText(model.getName());
+        holder.descriptiontext.setText(model.getPropDesc());
+        Glide.with(holder.img1.getContext()).load(url).into(holder.img1);
+//        try {
+//            URL url1 = new URL(model.getPurl());
+//            Bitmap image = BitmapFactory.decodeStream(url1.openConnection().getInputStream());
+//        } catch(IOException e) {
+//            System.out.println(e);
+//        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Det.class);
+                intent.putExtra("Name",name);
+                intent.putExtra("Desc",description);
+                intent.putExtra("Url",url);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
 
@@ -40,6 +64,7 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
       public myviewholder(@NonNull View itemView) {
           super(itemView);
+          context = itemView.getContext();
           img1=itemView.findViewById(R.id.img1);
           nametext=itemView.findViewById(R.id.nametext);
           descriptiontext=itemView.findViewById(R.id.descriptiontext);
