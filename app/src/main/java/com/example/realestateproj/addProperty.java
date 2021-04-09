@@ -37,6 +37,9 @@ public class addProperty extends AppCompatActivity {
     private EditText mEditTextPropertyAddress;
     private EditText mEditTextPropertyPrice;
     private EditText mEditTextCountryCode;
+    private EditText mEditTextPropOwnerName;
+    private EditText mEditTextPropOwnerMail;
+
     private ImageView mImageView;
     private ProgressBar mProgressBar;
     private Uri mImageUri;
@@ -58,6 +61,9 @@ public class addProperty extends AppCompatActivity {
         mEditTextPropertyAddress= findViewById(R.id.propertyAddress);
         mEditTextPropertyPrice=findViewById(R.id.enterPrize);
         mEditTextCountryCode=findViewById(R.id.enterCountryCode);
+        mEditTextPropOwnerName=findViewById(R.id.enterPropOwnerName);
+        mEditTextPropOwnerMail=findViewById(R.id.enterPropOwnerMail);
+
         mProgressBar =findViewById(R.id.progress_bar);
 
         mImageView=findViewById(R.id.image_view);
@@ -133,11 +139,14 @@ public class addProperty extends AppCompatActivity {
                                      String Address = mEditTextPropertyAddress.getText().toString().trim();
                                      String Price = mEditTextPropertyPrice.getText().toString().trim();
                                      String countryCode = mEditTextCountryCode.getText().toString().trim();
+                                     String ownerName= mEditTextPropOwnerName.getText().toString().trim();
+                                     String ownerMail= mEditTextPropOwnerMail.getText().toString().trim();
+
 
                                      Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
                                      @SuppressWarnings("VisibleForTests")
                                      String ImageUploadId = mDatabaseRef.push().getKey();
-                                     Upload imageUploadInfo = new Upload(PropName, url, Description, Address, Price, countryCode);
+                                     Upload imageUploadInfo = new Upload(PropName, url, Description, Address, Price, countryCode, ownerName, ownerMail);
 //                                     String ImageUploadId = mDatabaseRef.push().getKey();
 
                                      mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);

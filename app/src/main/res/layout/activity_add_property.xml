@@ -21,8 +21,8 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
+        android:layout_width="210dp"
+        android:layout_height="34dp"
         android:layout_marginStart="148dp"
         android:ems="10"
         android:hint="Enter Name of property"
@@ -43,12 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
+
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="214dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Enter description about property"
         android:inputType="textPersonName"
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="72dp"
         android:background="@color/black"
         android:text="Property address :"
         android:textColor="@color/white"
@@ -68,13 +69,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
-
     <EditText
         android:id="@+id/propertyAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="78dp"
+        android:layout_width="214dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="Enter property address:"
         android:inputType="textPersonName"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="152dp"
         android:background="@color/black"
         android:text="  Price :"
         android:textColor="@color/white"
@@ -96,10 +96,10 @@
 
     <EditText
         android:id="@+id/enterPrize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="138dp"
+        android:layout_width="218dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="128dp"
         android:ems="10"
         android:hint="Enter price:"
         android:inputType="textPersonName"
@@ -110,8 +110,8 @@
         android:id="@+id/countrycode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"
         android:background="@color/black"
         android:text="Country code:"
         android:textColor="@color/white"
@@ -121,10 +121,10 @@
 
     <EditText
         android:id="@+id/enterCountryCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="212dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="176dp"
         android:ems="10"
         android:hint="Enter country code:"
         android:inputType="textPersonName"
@@ -136,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="180dp"
         android:background="@color/black"
         android:text="Upload Image:"
         android:textColor="@color/white"
@@ -144,17 +144,82 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
+
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="209dp"
-        android:layout_height="152dp"
+        android:layout_width="222dp"
+        android:layout_height="131dp"
         android:layout_below="@+id/textView18"
-        android:layout_marginTop="214dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="36dp"
 
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+
+    <TextView
+        android:id="@+id/propOwnerMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="160dp"
+        android:background="@color/black"
+        android:text="Email address of owner to contact:"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/enterPropOwnerMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterPropOwnerName" />
+
+    <EditText
+        android:id="@+id/enterPropOwnerMail"
+        android:layout_width="223dp"
+        android:layout_height="37dp"
+
+        android:layout_marginStart="144dp"
+        android:layout_marginEnd="2dp"
+        android:ems="10"
+        android:hint="Enter property owner email address:"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/enterPropOwnerName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/propOwnerMail" />
+
+    <TextView
+        android:id="@+id/propOwnerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        android:text="Name of owner:"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_choose_image" />
+
+    <EditText
+        android:id="@+id/enterPropOwnerName"
+        android:layout_width="217dp"
+        android:layout_height="34dp"
+
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Enter property owner name:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/propOwnerMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view" />
 
     <Button
         android:id="@+id/button_upload"
@@ -162,7 +227,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="222dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#54B5BF"

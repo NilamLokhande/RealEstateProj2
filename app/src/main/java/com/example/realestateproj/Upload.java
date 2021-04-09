@@ -7,10 +7,12 @@ public class Upload {
     private String mPropPrice;
     private String mCountryCode;
     private String mImageUrl;
-    public Upload(String trim, String s){
+    private String mPropOwnerName;
+    private String mPropOwnerMail;
+    public Upload(String propName, String url, String description, String address, String price, String countrycode, String propownername, String propownermail,  String trim, String s){
 
     }
-    public Upload(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode){
+    public Upload(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode, String PropertyOwnerName,String PropertyOwnerMail ){
 
         if(name.trim().equals("")){
             name= "No Name";
@@ -22,6 +24,8 @@ public class Upload {
         mPropAddress =PropAddress;
         mPropPrice=PropPrice;
         mCountryCode=CountryCode;
+        mPropOwnerName= PropertyOwnerName;
+        mPropOwnerMail= PropertyOwnerMail;
     }
 
     public String getName(){
@@ -55,6 +59,11 @@ public class Upload {
     public void setCCode(String CountryCode){
         mCountryCode= CountryCode;
     }
+    public String getPropOwnerName(){ return mPropOwnerName;}
+    public void  setPropOwnerName(String PropertyOwnerName){ mPropOwnerName= PropertyOwnerName;}
+    public String getPropOwnerMail(){ return mPropOwnerMail;}
+    public void  setPropOwnerMail(String PropertyOwnerMail){ mPropOwnerMail= PropertyOwnerMail;}
+
 
 
 

@@ -16,7 +16,7 @@
             android:id="@+id/ourLocations2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="15dp"
 
             android:layout_marginEnd="20dp"
@@ -32,10 +32,10 @@
             android:id="@+id/sales2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="35dp"
 
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="2dp"
 
             android:backgroundTint="#54B5BF"
             android:drawableLeft="@drawable/ic_baseline_menu_24"
@@ -49,7 +49,7 @@
             android:id="@+id/rentals2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="5dp"
             android:backgroundTint="#54B5BF"
@@ -60,12 +60,13 @@
             app:layout_constraintStart_toEndOf="@+id/sales2"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+
         <Button
             android:id="@+id/favourites2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="92dp"
             android:layout_marginEnd="15dp"
             android:backgroundTint="#54B5BF"
             android:drawableLeft="@drawable/ic_baseline_favorite_24"
@@ -76,24 +77,6 @@
             app:layout_constraintHorizontal_bias="0.016"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sales2" />
-
-
-        <Button
-            android:id="@+id/search2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="30dp"
-
-            android:backgroundTint="#54B5BF"
-            android:drawableLeft="@drawable/ic_baseline_search_24"
-            android:text="Search"
-
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/favourites2"
-            app:layout_constraintTop_toBottomOf="@+id/ourLocations2" />
-
 
         <ImageView
             android:id="@+id/imageView3"
@@ -125,19 +108,37 @@
             android:id="@+id/addProperty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="40dp"
             android:layout_marginEnd="120dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="104dp"
 
             android:backgroundTint="#54B5BF"
             android:drawableLeft="@drawable/ic_baseline_post_add_24"
-            android:text="Add Property"
+            android:text="Add Sales"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.13"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/favourites2" />
+
+            />
+
+        <Button
+            android:id="@+id/addRentals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="104dp"
+
+            android:backgroundTint="#54B5BF"
+            android:drawableLeft="@drawable/ic_baseline_post_add_24"
+            android:text="Add Rentals"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

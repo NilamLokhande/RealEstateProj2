@@ -33,4 +33,52 @@
         android:layout_below="@id/nametext"
         android:layout_marginLeft="10dp"/>
 
+
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptiontext"
+        android:layout_marginTop="82dp"
+        android:text="This is address"
+        android:textColor="#000"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/prizeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addressText"
+        android:layout_marginTop="15dp"
+        android:text="This is price"
+        android:textColor="#000"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/countryCodeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prizeText"
+        android:layout_marginTop="15dp"
+        android:text="This is country code"
+        android:textColor="#000"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/propertyOwnerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countryCodeText"
+        android:layout_marginTop="15dp"
+        android:text="This is propertyOwnerName"
+        android:textColor="#000"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/propertyOwnerMailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/propertyOwnerText"
+        android:layout_marginTop="15dp"
+        android:text="This is propertOwnerMail"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+
 </RelativeLayout>
