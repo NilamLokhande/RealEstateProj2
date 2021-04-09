@@ -53,13 +53,7 @@ public class home extends AppCompatActivity {
                 startActivity(new Intent(home.this, favorites.class));
             }
         });
-        pSearch= findViewById(R.id.search2);
-        pSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(home.this, search.class));
-            }
-        });
+        
         pAddProperty=findViewById(R.id.addProperty);
         pAddProperty.setOnClickListener(new View.OnClickListener() {
             @Override

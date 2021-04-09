@@ -69,8 +69,8 @@
              android:id="@+id/favourites2"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_marginStart="116dp"
-             android:layout_marginTop="72dp"
+             android:layout_marginStart="112dp"
+             android:layout_marginTop="60dp"
              android:layout_marginEnd="15dp"
              android:backgroundTint="#54B5BF"
              android:drawableLeft="@drawable/ic_baseline_favorite_24"
@@ -114,14 +114,14 @@
              android:layout_height="wrap_content"
              android:layout_marginStart="40dp"
              android:layout_marginEnd="120dp"
-             android:layout_marginBottom="64dp"
+             android:layout_marginBottom="76dp"
 
              android:backgroundTint="#54B5BF"
              android:drawableLeft="@drawable/ic_baseline_post_add_24"
              android:text="Add Sales"
              app:layout_constraintBottom_toBottomOf="parent"
              app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.192"
+             app:layout_constraintHorizontal_bias="0.0"
              app:layout_constraintStart_toStartOf="parent"
 
              />
@@ -132,14 +132,14 @@
              android:layout_height="wrap_content"
              android:layout_marginStart="100dp"
              android:layout_marginEnd="40dp"
-             android:layout_marginBottom="64dp"
+             android:layout_marginBottom="76dp"
 
              android:backgroundTint="#54B5BF"
              android:drawableLeft="@drawable/ic_baseline_post_add_24"
              android:text="Add Rentals"
              app:layout_constraintBottom_toBottomOf="parent"
              app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="1.0"
+             app:layout_constraintHorizontal_bias="0.771"
              app:layout_constraintStart_toStartOf="parent"
 
              />

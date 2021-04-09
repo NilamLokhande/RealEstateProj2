@@ -57,13 +57,7 @@ public class nav2 extends AppCompatActivity {
                 startActivity(new Intent(nav2.this, favorites.class));
             }
         });
-        qSearch= findViewById(R.id.search2);
-        qSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(nav2.this, search.class));
-            }
-        });
+
         qAddProperty=findViewById(R.id.addProperty);
         qAddProperty.setOnClickListener(new View.OnClickListener() {
             @Override
