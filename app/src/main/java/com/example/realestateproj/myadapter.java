@@ -27,6 +27,11 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
         final String name = model.getName();
         final String description = model.getPropDesc();
+        final String ownName = model.getmPropOwnerName();
+        final String ownMail = model.getmPropOwnerMail();
+        final String price = model.getPrice();
+        final String countryCode = model.getCCode();
+        final String address = model.getAddress();
         String url = model.getUrl();
         holder.nametext.setText(model.getName());
         holder.descriptiontext.setText(model.getPropDesc());
@@ -44,6 +49,13 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
                 intent.putExtra("Name",name);
                 intent.putExtra("Desc",description);
                 intent.putExtra("Url",url);
+                intent.putExtra("OwnerName", ownName);
+                intent.putExtra("OwnerMail", ownMail);
+                intent.putExtra("Price", price);
+                intent.putExtra("CountryCode", countryCode);
+                intent.putExtra("Address", address);
+
+
 
                 context.startActivity(intent);
             }

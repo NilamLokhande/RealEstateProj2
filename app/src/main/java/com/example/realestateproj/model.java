@@ -7,10 +7,29 @@ public class model {
     private String mPropPrice;
     private String mCountryCode;
     private String mImageUrl;
+    private String mPropOwnerName;
+
+    public String getmPropOwnerName() {
+        return mPropOwnerName;
+    }
+
+    public void setmPropOwnerName(String mPropOwnerName) {
+        this.mPropOwnerName = mPropOwnerName;
+    }
+
+    public String getmPropOwnerMail() {
+        return mPropOwnerMail;
+    }
+
+    public void setmPropOwnerMail(String mPropOwnerMail) {
+        this.mPropOwnerMail = mPropOwnerMail;
+    }
+
+    private String mPropOwnerMail;
     public model(){
 
     }
-    public model(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode){
+    public model(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode, String PropertyOwnerName,String PropertyOwnerMail ){
 
         if(name.trim().equals("")){
             name= "No Name";
@@ -21,6 +40,8 @@ public class model {
         mPropAddress =PropAddress;
         mPropPrice=PropPrice;
         mCountryCode=CountryCode;
+        mPropOwnerName = PropertyOwnerName;
+        mPropOwnerMail = PropertyOwnerMail;
     }
 
     public String getName(){

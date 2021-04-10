@@ -143,10 +143,10 @@ public class addProperty extends AppCompatActivity {
                                      String ownerMail= mEditTextPropOwnerMail.getText().toString().trim();
 
 
-                                     Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                                     Toast.makeText(getApplicationContext(), "Data Uploaded Successfully ", Toast.LENGTH_LONG).show();
                                      @SuppressWarnings("VisibleForTests")
                                      String ImageUploadId = mDatabaseRef.push().getKey();
-                                     Upload imageUploadInfo = new Upload(PropName, url, Description, Address, Price, countryCode, ownerName, ownerMail);
+                                     model imageUploadInfo = new model(PropName, url, Description, Address, Price, countryCode, ownerName, ownerMail);
 //                                     String ImageUploadId = mDatabaseRef.push().getKey();
 
                                      mDatabaseRef.child(ImageUploadId).setValue(imageUploadInfo);
