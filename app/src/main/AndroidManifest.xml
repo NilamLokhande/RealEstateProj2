@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealEstateProj">
-        <activity android:name=".Det"></activity>
+        <activity android:name=".Addrental"></activity>
+        <activity android:name=".Det" />
         <activity android:name=".rentaldetails" />
         <activity android:name=".rentals3" />
         <activity android:name=".addProperty" />

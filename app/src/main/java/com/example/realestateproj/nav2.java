@@ -21,6 +21,7 @@ public class nav2 extends AppCompatActivity {
     Button qRental;
     Button qFavor;
     Button qAddProperty;
+    Button qAddRentals;
 
     Button qSearch;
 
@@ -30,6 +31,13 @@ public class nav2 extends AppCompatActivity {
         setContentView(R.layout.activity_nav2);
         drawerLayout = findViewById(R.id.drawer_layout);
         qMapBtn= findViewById(R.id.ourLocations2);
+        qAddRentals = findViewById(R.id.addRentals);
+        qAddRentals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nav2.this, Addrental.class));
+            }
+        });
         qMapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

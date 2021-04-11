@@ -18,6 +18,7 @@ public class home extends AppCompatActivity {
     Button pContactUs;
     Button pSearch;
     Button pAddProperty;
+    Button pAddRentals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class home extends AppCompatActivity {
 
         drawerLayout= findViewById(R.id.drawer_layout);
         pMapBtn= findViewById(R.id.ourLocations2);
+//        pAddRentals = findViewById(R.id.addRentals);
+
         pMapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +62,13 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(home.this, addProperty.class));
+            }
+        });
+        pAddRentals=findViewById(R.id.addRentals);
+        pAddRentals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(home.this, Addrental.class));
             }
         });
 
