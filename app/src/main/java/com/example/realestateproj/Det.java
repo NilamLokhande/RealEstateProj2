@@ -6,10 +6,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baidu.mapapi.map.SupportMapFragment;
 import com.bumptech.glide.Glide;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Det extends AppCompatActivity {
+public class Det extends AppCompatActivity implements OnMapReadyCallback {
     ImageView img1; TextView nametext; TextView descripto; TextView addressText;TextView prizeText;TextView countryCodeText;TextView ownerNameText; TextView ownerEmailText;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +29,9 @@ public class Det extends AppCompatActivity {
         countryCodeText=findViewById(R.id.countryCodeText);
         ownerNameText=findViewById(R.id.propertyOwnerText);
         ownerEmailText=findViewById(R.id.propertyOwnerMailText);
-        String name = getIntent().getStringExtra("Name");
+
+
+        name = getIntent().getStringExtra("Name");
         String desc = getIntent().getStringExtra("Desc");
         String address= getIntent().getStringExtra("Address");
 
@@ -48,5 +56,12 @@ public class Det extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions()
+        .position(new LatLng(0,0))
+        .title(name));
     }
 }

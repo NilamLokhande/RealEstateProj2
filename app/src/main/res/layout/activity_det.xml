@@ -32,7 +32,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-
                 android:text="This is Demo Name"
                 android:textSize="23sp"
 
@@ -60,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
-
                 android:text="About Property: "
                 android:textStyle="bold"
                 android:textColor="#000000"
@@ -104,7 +102,6 @@
                 android:layout_weight="1"
                 android:gravity="left"
 
-
                 android:text="Property located at: "
                 android:textStyle="italic"
                 android:textColor="#5A3334"
@@ -138,7 +135,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
-
 
                 android:text="Prize of property: "
                 android:textStyle="italic"
@@ -246,7 +242,12 @@
             android:background="#ff000000" />
 
 
-
+        <fragment
+            android:id="@+id/content_product_detail_gmaps"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="250dip"
+            android:layout_margin="10dp" />
 
 
     </LinearLayout>

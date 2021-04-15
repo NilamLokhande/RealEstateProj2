@@ -8,6 +8,24 @@ public class model {
     private String mCountryCode;
     private String mImageUrl;
     private String mPropOwnerName;
+    private double latitude;
+    private double longitude;
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
     public String getmPropOwnerName() {
         return mPropOwnerName;
@@ -29,7 +47,7 @@ public class model {
     public model(){
 
     }
-    public model(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode, String PropertyOwnerName,String PropertyOwnerMail ){
+    public model(String name , String ImageUrl, String PropDesc, String PropAddress, String PropPrice, String CountryCode, String PropertyOwnerName,String PropertyOwnerMail, double latitude, double longitude){
 
         if(name.trim().equals("")){
             name= "No Name";
@@ -42,6 +60,8 @@ public class model {
         mCountryCode=CountryCode;
         mPropOwnerName = PropertyOwnerName;
         mPropOwnerMail = PropertyOwnerMail;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName(){
